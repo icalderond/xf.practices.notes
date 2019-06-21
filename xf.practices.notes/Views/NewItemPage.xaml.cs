@@ -11,12 +11,12 @@ using xf.practices.notes.ViewModels;
 namespace xf.practices.notes.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class NewItemPage : ContentPage
     {
-        public LoginPage()
+        public NewItemPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel(Navigation);
+            BindingContext = new NewItemPageViewModel(Navigation);
         }
     }
 }

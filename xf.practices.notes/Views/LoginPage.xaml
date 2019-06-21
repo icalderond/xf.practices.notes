@@ -19,11 +19,14 @@
             <StackLayout Margin="10,0"
                          Orientation="Vertical">
                 <Label Text="User" />
-                <Entry Placeholder="User" />
+                <Entry x:Name="entryUser" Text="{Binding User}"
+                       Placeholder="User" />
                 <Label Text="Password" />
                 <Entry Placeholder="Password"
+                       Text="{Binding Password}"
                        IsPassword="True" />
-                <Button Text="Enter" />
+                <Button Text="Enter"
+                        Command="{Binding AccessCommand}" />
             </StackLayout>
         </Grid>
         <Grid Grid.Row="2">

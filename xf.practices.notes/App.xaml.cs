@@ -11,7 +11,7 @@ namespace xf.practices.notes
         {
             InitializeComponent();
 
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new ListOfNotesPage());
         }
 
         protected override void OnStart()

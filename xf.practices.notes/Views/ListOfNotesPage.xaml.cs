@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using xf.practices.notes.ViewModels;
 
 namespace xf.practices.notes.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class ListOfNotesPage : ContentPage
     {
-        public LoginPage()
+        public ListOfNotesPage()
         {
             InitializeComponent();
-            BindingContext = new LoginViewModel(Navigation);
         }
     }
 }

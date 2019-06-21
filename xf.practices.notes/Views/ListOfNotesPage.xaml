@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:model="clr-namespace:xf.practices.notes.Models"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="xf.practices.notes.Views.ListOfNotesPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Command="{Binding AddCommand}" />
+    </ContentPage.ToolbarItems>
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Array Type="{Type model:Note}"
+                     x:Key="listNotes">
+                <model:Note Title="Mi nota"
+                            Content="Esto es una nota" />
+                <model:Note Title="Mi nota"
+                            Content="Esto es una nota" />
+                <model:Note Title="Mi nota"
+                            Content="Esto es una nota" />
+            </x:Array>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ListView ItemsSource="{StaticResource listNotes}"
+              SeparatorVisibility="None"
+              Margin="10,0"
+              HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame CornerRadius="20"
+                           Margin="0,10"
+                           HasShadow="False"
+                           BackgroundColor="LightCyan">
+                        <StackLayout>
+                            <Label Text="Editado hace 1 dia"
+                                   FontSize="Micro" />
+                            <Label Text="{Binding Title}"
+                                   FontSize="Large"
+                                   FontAttributes="Bold" />
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
